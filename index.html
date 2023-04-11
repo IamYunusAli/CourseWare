@@ -4,72 +4,99 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>CourseWare</title>
+    <link href="style.css" rel="stylesheet" />
+    <title>Courseware</title>
   </head>
   <body>
-    <header class="header">
-      <img src="BLogo.png" alt="logo" height="70" width="70" />
-      <h1>CourseWare</h1>
-      <button>Share a thought</button>
-    </header>
-    <form action="" class="course-form">
-      <input type="text" placeholder="input the title of the course" />
-      <span>300</span>
-      <input type="text" placeholder="the source of the course" />
-      <select name="" id="">
-        <option value="">choose the category</option>
-        <option value="Udemy">Udemy</option>
-        <option value="SkillShare">SkillShare</option>
-        <option value="Pluralsight">Pluralsight</option>
-      </select>
-      <button>Post</button>
-    </form>
-    <main>
-      <aside>
-        <ul>
-          <li><button>All</button></li>
-          <li><button>Udemy</button></li>
-          <li><button>SkillShare</button></li>
-          <li><button>Pluralsight</button></li>
-        </ul>
-      </aside>
-      <section>
-        <ul>
-          <li class="course">
-            <p>
-              PostgreSQL Database Administration Masterclass
-              <a
-                href="https://www.udemy.com/course/postgresql-database-administration-masterclass/"
-                target="_blank"
-                >(Source)</a
-              >
-              <span class="tag">#Udemy#</span>
-            </p>
-            <div>
-              <button>👍 23</button>
-              <button>❤ 8</button>
-              <button>⛔ 0</button>
-            </div>
-          </li>
-          <li class="course">
-            <p>
-              Python For Beginners : Become Python Programmer
-              <a
-                href="https://www.mother.ly/parenting/millennial-dads-spend-more-time-with-their-kids"
-                target="_blank"
-                >(Source)</a
-              >
-              <span class="tag">#Skillshare#</span>
-            </p>
-            <div>
-              <button>👍 11</button>
-              <button>❤ 6</button>
-              <button>⛔ 3</button>
-            </div>
-          </li>
-        </ul>
-      </section>
-    </main>
+    <div class="container">
+      <header class="header">
+        <div class="logo">
+          <img
+            src="BLogo.png"
+            height="68"
+            width="68"
+            alt="Today I Learned Logo"
+          />
+          <h1>Courseware</h1>
+        </div>
+
+        <button class="btn btn-large">Share a Course</button>
+      </header>
+
+      <form class="course-form">
+        <input type="text" placeholder="Share a fact with the world..." />
+        <span>200</span>
+        <input type="text" placeholder="Trustworthy source..." />
+        <select>
+          <option value="">Choose category:</option>
+          <option value="Udemy">Udemy</option>
+          <option value="SkillShare">SkillShare</option>
+          <option value="Udacity">Udacity</option>
+        </select>
+        <button class="btn btn-large">Post</button>
+      </form>
+
+      <main class="main">
+        <aside>
+          <ul>
+            <li class="category">
+              <button class="btn btn-all-categories">All</button>
+            </li>
+            <li class="category">
+              <button class="btn btn-category">Udemy</button>
+            </li>
+            <li class="category">
+              <button class="btn btn-category">SkillShare</button>
+            </li>
+            <li class="category">
+              <button class="btn btn-category">Udacity</button>
+            </li>
+          </ul>
+        </aside>
+
+        <section>
+          <ul>
+            <li class="course">
+              <p>
+                React is being developed by Meta (formerly facebook)
+                <a
+                  class="source"
+                  href="https://opensource.fb.com/"
+                  target="_blank"
+                  >(Source)</a
+                >
+              </p>
+              <span class="tag">technology</span>
+              <div class="vote-buttons">
+                <button>👍 24</button>
+                <button>🤯 9</button>
+                <button>⛔️ 4</button>
+              </div>
+            </li>
+
+            <li class="course">
+              <p>
+                Millennial dads spend 3 times as much time with their kids than
+                their fathers spent with them. In 1982, 43% of fathers had never
+                changed a diaper. Today, that number is down to 3%
+
+                <a
+                  class="source"
+                  href="https://www.mother.ly/parenting/millennial-dads-spend-more-time-with-their-kids"
+                  target="_blank"
+                  >(Source)</a
+                >
+              </p>
+              <span class="tag">society</span>
+              <div class="vote-buttons">
+                <button>👍 11</button>
+                <button>🤯 2</button>
+                <button>⛔️ 0</button>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
   </body>
 </html>
