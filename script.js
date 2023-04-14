@@ -1,15 +1,12 @@
-// Selecting DOM elements
 const btn = document.querySelector(".btn-open");
-const course = document.querySelector(".course-form");
+const form = document.querySelector(".course-form");
 const courseList = document.querySelector(".course-lists");
 
-// Create DOM elements: Render facts in list
 courseList.innerHTML = "";
 
-// Load data from Supabase
-loadFacts();
+loadCourse();
 
-async function loadFacts() {
+async function loadCourse() {
   const res = await fetch(
     "https://cluwenguxyodwixzwnxh.supabase.co/rest/v1/courses",
     {
@@ -25,7 +22,7 @@ async function loadFacts() {
 
 function createCourseList(dataArray) {
   const htmlArr = dataArray.map(
-    (course) => `<li class="fact">
+    (course) => `<li class="course">
     <p>
     ${course.text}
       <a
@@ -34,9 +31,7 @@ function createCourseList(dataArray) {
         target="_blank"
       >(Source)</a>
     </p>
-    <span class="tag" style="background-color: ${
-      category.find((cat) => cat.name === course.category).color
-    }">${course.category}</span>
+    <span class="tag">${course.category}</span>
   </li>`
   );
   const html = htmlArr.join("");
@@ -50,6 +45,6 @@ btn.addEventListener("click", function () {
     btn.textContent = "Close";
   } else {
     form.classList.add("hidden");
-    btn.textContent = "Share a fact";
+    btn.textContent = "Share a course";
   }
 });
