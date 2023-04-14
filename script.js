@@ -1,10 +1,10 @@
 // Selecting DOM elements
 const btn = document.querySelector(".btn-open");
 const course = document.querySelector(".course-form");
-const factsList = document.querySelector(".course-lists");
+const courseList = document.querySelector(".course-lists");
 
 // Create DOM elements: Render facts in list
-factsList.innerHTML = "";
+courseList.innerHTML = "";
 
 // Load data from Supabase
 loadFacts();
@@ -20,27 +20,27 @@ async function loadFacts() {
     }
   );
   const data = await res.json();
-  createFactsList(data);
+  createCourseList(data);
 }
 
-function createFactsList(dataArray) {
+function createCourseList(dataArray) {
   const htmlArr = dataArray.map(
-    (fact) => `<li class="fact">
+    (course) => `<li class="fact">
     <p>
-    ${fact.text}
+    ${course.text}
       <a
         class="source"
-        href="${fact.source}"
+        href="${course.source}"
         target="_blank"
       >(Source)</a>
     </p>
     <span class="tag" style="background-color: ${
-      CATEGORIES.find((cat) => cat.name === fact.category).color
-    }">${fact.category}</span>
+      category.find((cat) => cat.name === course.category).color
+    }">${course.category}</span>
   </li>`
   );
   const html = htmlArr.join("");
-  factsList.insertAdjacentHTML("afterbegin", html);
+  courseList.insertAdjacentHTML("afterbegin", html);
 }
 
 // Toggle form visibility
